@@ -1,9 +1,15 @@
 package fr.leroideskiwis.fairytail.entities.eatable;
 
+import fr.leroideskiwis.fairytail.core.Location;
+import fr.leroideskiwis.fairytail.entities.Entity;
 import fr.leroideskiwis.fairytail.entities.characters.CharacterType;
 import fr.leroideskiwis.fairytail.entities.characters.GameCharacter;
 
-public class Fire implements Eatable{
+public class Fire extends Entity implements Eatable{
+
+    public Fire(Location location) {
+        super(location);
+    }
 
     @Override
     public boolean canBeEat(GameCharacter gameCharacter) {

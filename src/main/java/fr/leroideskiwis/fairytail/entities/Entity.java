@@ -4,7 +4,7 @@ import fr.leroideskiwis.fairytail.core.Location;
 
 public class Entity {
 
-    private Location location;
+    public final Location location;
 
     public Entity(Location location){
         this.location = location;

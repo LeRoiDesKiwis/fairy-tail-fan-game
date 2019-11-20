@@ -2,6 +2,8 @@ package fr.leroideskiwis.fairytail.core;
 
 import fr.leroideskiwis.fairytail.utils.Interval;
 
+import java.util.Optional;
+
 public class Location {
 
     public int x;
@@ -12,8 +14,27 @@ public class Location {
         this.y = y;
     }
 
-    public boolean isInBorder(int xMax, int yMax){
-        return new Interval(0, xMax).isBetween(x) && new Interval(0, yMax).isBetween(y);
+    public boolean isInBorder(Location max){
+        return new Interval(0, max.x).isBetween(x) && new Interval(0, max.y).isBetween(y);
+    }
+
+    /**
+     * prends en paramètre les bordures et retourne la location autour de cette location à 1 bloc
+     *
+     * @param max Les bordures
+     * @return la location autour de cette location
+     */
+    public Optional<Location> getNearLocation(Location max){
+
+        for(int x = -1; x <= 1; x++){
+            for (int y = -1; y <= 1; y++) {
+                Location location = new Location(x, y);
+                if(location.isInBorder(max)) return Optional.of(location);
+            }
+        }
+
+        return Optional.empty();
+
     }
 
     /**

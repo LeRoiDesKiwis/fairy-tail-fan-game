@@ -5,7 +5,7 @@ import fr.leroideskiwis.fairytail.attacks.NatsuAttack;
 import fr.leroideskiwis.fairytail.attacks.NatsuSpecialAttack;
 import fr.leroideskiwis.fairytail.core.Location;
 
-public class Natsu extends GameCharacter{
+public class Natsu extends Attacker{
 
     public Natsu(int health, Location location, CharacterType characterType) {
         super(characterType, health, location);
